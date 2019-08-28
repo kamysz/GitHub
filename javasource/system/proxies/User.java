@@ -80,6 +80,9 @@ public class User
 		if (com.mendix.core.Core.isSubClassOf("Administration.Account", mendixObject.getType()))
 			return administration.proxies.Account.initialize(context, mendixObject);
 
+		if (com.mendix.core.Core.isSubClassOf("AppCloudServices.AppCloudUser", mendixObject.getType()))
+			return appcloudservices.proxies.AppCloudUser.initialize(context, mendixObject);
+
 		return new system.proxies.User(context, mendixObject);
 	}
 
